@@ -1,0 +1,21 @@
+<!-- Odoo Python Snippets -->
+
+<snippet>
+    <content><![CDATA[
+${1:field_name} = fields.Float(
+    string='${2:Field Label}',
+    compute='_compute_${1:field_name}',
+    store=True,
+)
+
+@api.multi
+@api.depends('${3:another_field}')
+def _compute_${1:field_name}(self):
+    for it in self:
+        it.${1:field_name} = 0
+$0
+]]></content>
+    <tabTrigger>fields.Computed</tabTrigger>
+    <scope>source.python</scope>
+    <description>computed field (Odoo)</description>
+</snippet>
