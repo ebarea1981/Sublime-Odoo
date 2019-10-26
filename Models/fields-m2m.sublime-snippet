@@ -3,8 +3,11 @@
 <snippet>
     <content><![CDATA[
 ${1:field_name}_ids = fields.Many2many(
-    '${2:source.model.name}',
-    string='${3:Field Label}',
+    comodel_name='${2:source.model.name}',
+    relation='${3:rel_name}', 
+    column1='', 
+    column2=''
+    string='${4:Field Label}',
 )$0
 ]]></content>
     <tabTrigger>fields.Many2many</tabTrigger>
