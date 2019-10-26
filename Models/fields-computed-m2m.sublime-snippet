@@ -1,0 +1,23 @@
+<!-- Odoo Python Snippets -->
+
+<snippet>
+    <content><![CDATA[
+${1:field_name} = fields.Many2many(
+	comodel_name='${2:source.model.name}',
+    string='${3:Field Label}',
+    compute='_compute_${1:field_name}',
+    store=True,
+)
+
+@api.multi
+@api.depends('${4:another_field}')
+def _compute_${1:field_name}(self):
+    for it in self:
+    	source_model_ids = self.env['${2:source.model.name}'].search([])
+        it.${1:field_name} = source_model_ids
+$0
+]]></content>
+    <tabTrigger>fields.Computed.Many2many</tabTrigger>
+    <scope>source.python</scope>
+    <description>computed m2m field (Odoo)</description>
+</snippet>
