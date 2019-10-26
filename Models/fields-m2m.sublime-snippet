@@ -4,10 +4,10 @@
     <content><![CDATA[
 ${1:field_name}_ids = fields.Many2many(
     comodel_name='${2:source.model.name}',
-    relation='${3:rel_name}', 
-    column1='', 
-    column2=''
-    string='${4:Field Label}',
+    relation='$rel_{3:table_name}', 
+    column1='${4:current_model_field_name}_id', 
+    column2='${5:source_model_field_name}_id'
+    string='${6:Field Label}',
 )$0
 ]]></content>
     <tabTrigger>fields.Many2many</tabTrigger>

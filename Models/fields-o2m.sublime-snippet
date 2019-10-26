@@ -1,10 +1,10 @@
 <!-- Odoo Python Snippets -->
-
+<!-- comodel_name="", inverse_name="", string="" -->
 <snippet>
     <content><![CDATA[
 ${1:field_name}_ids = fields.One2many(
-    '${2:source.model.name}',
-    '${3:o2m_field_id'},
+    comodel_name='${2:source.model.name}',
+    inverse_name='${3:o2m_field_id'},
     string='${4:Field Label}',
 )$0
 ]]></content>
